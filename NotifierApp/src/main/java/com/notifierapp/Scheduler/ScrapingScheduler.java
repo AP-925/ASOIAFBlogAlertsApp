@@ -37,7 +37,6 @@ public class ScrapingScheduler {
 	@Scheduled(fixedRateString = "${scheduling.time}", timeUnit = TimeUnit.HOURS)
 	public void scrapeResource() {
 		LOGGER.info(LocalDateTime.now() + ":" + " Triggering scraping api to fetch blog site data");
-		LOGGER.info("schedulingTime in hours : " + schedulingTime);
 		boolean newBlogPostToday = scrapingService.isNewBlogPostToday();
 
 		if (newBlogPostToday) {
@@ -45,7 +44,7 @@ public class ScrapingScheduler {
 			notificationService.sendNotifications(scrapingService.getCurrentDateAsString());
 			LOGGER.info("Notifications sent to all subscribers successfully!");
 		} else {
-			LOGGER.info("Retrying after 6 hours..");
+			LOGGER.info("Retrying after " + schedulingTime + " hrs..");
 		}
 	}
 }
