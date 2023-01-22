@@ -1,0 +1,37 @@
+{"properties": [
+  {
+    "name": "blog.url",
+    "type": "java.lang.String",
+    "description": "A description for 'blog.url'"
+  },
+  {
+    "name": "scheduling.time",
+    "type": "java.lang.String",
+    "description": "A description for 'scheduling.time'"
+  },
+  {
+    "name": "spring.port",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.port'"
+  },
+  {
+    "name": "pilotTestFlag",
+    "type": "java.lang.String",
+    "description": "A description for 'pilotTestFlag'"
+  },
+  {
+    "name": "testing.pilot-test-flag",
+    "type": "java.lang.String",
+    "description": "A description for 'testing.pilot-test-flag'"
+  },
+  {
+    "name": "testing.testDate",
+    "type": "java.lang.String",
+    "description": "A description for 'testing.testDate'"
+  },
+  {
+    "name": "testing.testID",
+    "type": "java.lang.String",
+    "description": "A description for 'testing.testID'"
+  }
+]}
