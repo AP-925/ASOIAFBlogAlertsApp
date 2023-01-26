@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import com.notifierapp.Constants.NotifierConstants;
 import com.notifierapp.Service.EmailNotificationService;
 import com.notifierapp.Service.ScrapingService;
+import com.notifierapp.Util.DateUtil;
 
 import jakarta.annotation.PostConstruct;
 
@@ -25,6 +26,9 @@ public class ScrapingScheduler {
 	
 	@Autowired
 	private EmailNotificationService notificationService;
+	
+	@Autowired
+	private DateUtil util;
 
 	@Value("${scheduling.time}")
 	public String schedulingTime;
@@ -41,7 +45,7 @@ public class ScrapingScheduler {
 
 		if (newBlogPostToday) {
 			LOGGER.info("New blog post observed today. Sending notifications..");
-			notificationService.sendNotifications(scrapingService.getCurrentDateAsString());
+			notificationService.sendNotifications(util.getCurrentDateAsString());
 			LOGGER.info("Notifications sent to all subscribers successfully!");
 		} else {
 			LOGGER.info("Retrying after " + schedulingTime + " hrs..");
